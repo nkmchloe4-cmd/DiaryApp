@@ -22,7 +22,39 @@ namespace DiaryApp
 
                 MenuChoices choice = GetMenuChoices();
 
+                switch (choice)
+                {
+                    case MenuChoices.AddEntry:
+                        Console.WriteLine("Skriv in din anteckning");
+                        AddEntry();
+                        break;
 
+                    case MenuChoices.ShowAllEntries:
+                        ShowAllEntries();
+                        break;
+
+                    case MenuChoices.SearchEntries:
+                        SearchEntries();
+                        break;
+
+                    case MenuChoices.SaveToFile:
+                        SaveToFile();
+                        break;
+
+                    case MenuChoices.ReadFromFile:
+                        ReadFromFile();
+                        break;
+
+                    case MenuChoices.Exit:
+                        Console.WriteLine("Avslutar Appen. Hej då!");
+                        return;
+
+                    default:
+                        Console.WriteLine("Ogiltigt val, försök igen!");
+                        break;
+                }
+                
+            
             }
 
         }

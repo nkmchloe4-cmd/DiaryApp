@@ -8,6 +8,7 @@ namespace DiaryApp
 {
     public enum MenuChoices
     {
+        Invalid = 0,
         AddEntry = 1,
         ShowAllEntries = 2,
         SearchEntries = 3,
