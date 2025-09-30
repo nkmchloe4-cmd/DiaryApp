@@ -26,11 +26,11 @@ namespace DiaryApp
                 {
                     case MenuChoices.AddEntry:
                         Console.WriteLine("Skriv in din anteckning");
-                        AddEntry();
+                        DiaryProperties.AddEntry(diaryFilePath);
                         break;
 
                     case MenuChoices.ShowAllEntries:
-                        ShowAllEntries();
+                        DiaryProperties.ShowAllEntries(diaryFilePath);
                         break;
 
                     case MenuChoices.SearchEntries:
@@ -57,7 +57,7 @@ namespace DiaryApp
             
             }
 
-        }
+        }       
         private static MenuChoices GetMenuChoices()
         {
             string? input = Console.ReadLine();
