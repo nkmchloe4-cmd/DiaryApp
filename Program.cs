@@ -4,13 +4,19 @@ namespace DiaryApp
 {
     internal class Program
     {
-        private static readonly string diaryFilePath = "diary.txt";
         static void Main(string[] args)
         {
-            Console.WriteLine("Välkommen Till DagboksAppen!");
+            string diaryFilePath = "diary.txt";
+
+            // Läs in befintliga anteckningar
+            DiaryProperties.ReadFromFile(diaryFilePath);
+
+            
 
             while (true)
-            {
+            {            
+                Console.WriteLine("Välkommen Till DagboksAppen!");
+
                 Console.WriteLine("\nVad vill du göra?");
                 Console.WriteLine("1. Skriv ny anteckning");
                 Console.WriteLine("2. Visa alla anteckningar ");
@@ -18,8 +24,9 @@ namespace DiaryApp
                 Console.WriteLine("4. Spara till fil");
                 Console.WriteLine("5. Läs från fil");
                 Console.WriteLine("6. Avsluta Appen");
-                Console.WriteLine("Skriv in din val");
 
+                Console.WriteLine("\nSkriv in din val 1-6:");
+                
                 MenuChoices choice = GetMenuChoices();
 
                 switch (choice)
@@ -27,22 +34,32 @@ namespace DiaryApp
                     case MenuChoices.AddEntry:
                         Console.WriteLine("Skriv in din anteckning");
                         DiaryProperties.AddEntry(diaryFilePath);
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
 
                     case MenuChoices.ShowAllEntries:
                         DiaryProperties.ShowAllEntries(diaryFilePath);
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
 
                     case MenuChoices.SearchEntries:
-                        SearchEntries();
+                        DiaryProperties.SearchEntries(diaryFilePath);
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
 
                     case MenuChoices.SaveToFile:
-                        SaveToFile();
+                        DiaryProperties.SaveToFile(diaryFilePath);
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
 
                     case MenuChoices.ReadFromFile:
-                        ReadFromFile();
+                        DiaryProperties.ReadFromFile(diaryFilePath);
+                        Console.ReadKey();
+                        Console.Clear();
                         break;
 
                     case MenuChoices.Exit:
@@ -53,8 +70,7 @@ namespace DiaryApp
                         Console.WriteLine("Ogiltigt val, försök igen!");
                         break;
                 }
-                
-            
+                           
             }
 
         }       
