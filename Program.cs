@@ -11,8 +11,6 @@ namespace DiaryApp
             // Läs in befintliga anteckningar
             DiaryProperties.ReadFromFile(diaryFilePath);
 
-            
-
             while (true)
             {            
                 Console.WriteLine("Välkommen Till DagboksAppen!");
@@ -34,30 +32,38 @@ namespace DiaryApp
                     case MenuChoices.AddEntry:
                         Console.WriteLine("Skriv in din anteckning");
                         DiaryProperties.AddEntry(diaryFilePath);
+                        Console.WriteLine("\nTryck Enter för att fortsätta");
                         Console.ReadKey();
                         Console.Clear();
                         break;
 
                     case MenuChoices.ShowAllEntries:
                         DiaryProperties.ShowAllEntries(diaryFilePath);
+                        Console.WriteLine("\nTryck Enter för att fortsätta");
                         Console.ReadKey();
                         Console.Clear();
                         break;
 
                     case MenuChoices.SearchEntries:
                         DiaryProperties.SearchEntries(diaryFilePath);
+                        Console.WriteLine("\nTryck Enter för att fortsätta");
                         Console.ReadKey();
                         Console.Clear();
                         break;
 
                     case MenuChoices.SaveToFile:
                         DiaryProperties.SaveToFile(diaryFilePath);
+                        Console.WriteLine("Dagboken har sparats");
+                        Console.WriteLine("\nTryck Enter för att fortsätta");
                         Console.ReadKey();
                         Console.Clear();
                         break;
 
                     case MenuChoices.ReadFromFile:
                         DiaryProperties.ReadFromFile(diaryFilePath);
+                        Console.WriteLine("Filen har lästs in.");
+                        DiaryProperties.ShowAllEntries(diaryFilePath);
+                        Console.WriteLine("\nTryck Enter för att fortsätta");
                         Console.ReadKey();
                         Console.Clear();
                         break;
@@ -69,10 +75,8 @@ namespace DiaryApp
                     default:
                         Console.WriteLine("Ogiltigt val, försök igen!");
                         break;
-                }
-                           
+                }                           
             }
-
         }       
         private static MenuChoices GetMenuChoices()
         {
@@ -84,7 +88,6 @@ namespace DiaryApp
             }
             Console.WriteLine("Ogiltigt val. Försök igen.");
             return GetMenuChoices();
-
         }
     }
 }

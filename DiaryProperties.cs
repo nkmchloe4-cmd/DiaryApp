@@ -115,7 +115,6 @@ namespace DiaryApp
                 if (File.Exists(diaryFilePath))
                 {
                     Entries = File.ReadAllLines(diaryFilePath).ToList();
-                    Console.WriteLine("Dagboken har lästs in från fil.");
                 }
                 else
                 {
