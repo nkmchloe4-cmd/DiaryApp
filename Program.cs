@@ -6,7 +6,8 @@ namespace DiaryApp
     {
         static void Main(string[] args)
         {
-            string diaryFilePath = "diary.txt";
+            //Används för att läsa och skriva till diary.txt
+            string diaryFilePath = Path.Combine(Environment.CurrentDirectory, "diary.txt");
 
             // Läs in befintliga anteckningar
             DiaryProperties.ReadFromFile(diaryFilePath);

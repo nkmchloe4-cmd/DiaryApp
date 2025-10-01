@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.ExceptionServices;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace DiaryApp
 {
@@ -52,8 +54,8 @@ namespace DiaryApp
                  Console.WriteLine("Dina anteckningar är följande:");
                  for (int i = 0; i < Entries.Count; i++)
                  {
-                   Console.WriteLine($"{i + 1}. {Entries[i]}");
-                 }                                          
+                   Console.WriteLine($"{i + 1}. {Entries[i].Split(": ", 2)[1]}");
+                 }  //Skriver ut endast texten, utan tidstämplingar                                        
            }
                 catch (Exception ex)
                 {
@@ -100,7 +102,6 @@ namespace DiaryApp
             try
             {
                 File.WriteAllLines(diaryFilePath, Entries);
-                Console.WriteLine("Dagboken har sparats till fil.");
             }
             catch (Exception ex)
             {
@@ -129,8 +130,7 @@ namespace DiaryApp
 
 
         }
-
-
+                
     }
 }
 
