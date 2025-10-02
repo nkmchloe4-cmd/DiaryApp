@@ -1,14 +1,36 @@
-# DiaryApp
-A simple C# program where a user can write, save, search entries and more
+📓 DagboksAppen
+En enkel konsolapplikation i C# där du kan skriva, visa, söka och spara dagboksanteckningar direkt från terminalen.
 
-Functions:
-1. Write new notes
-2. Show all notes
-3. Search for a note using dates
-4. Save to file
-5. Read from file
+🛠 Funktioner
+✍️ Skriv anteckningar – Lägg till nya dagboksrader med automatisk tidsstämpel
 
-How to run program
-1. Open in Visual Studio
-2. Run Program.cs
-3. Follow menu options in console window
+📖 Visa anteckningar – Se alla anteckningar utan tidsstämpel
+
+🔍 Sök efter datum – Hitta anteckningar från ett specifikt datum
+
+💾 Spara till fil – Exportera dagboken med tidsstämplar till diary.txt
+
+📂 Läs från fil – Läser in tidigare sparade anteckningar från diary.txt
+
+❌ Avsluta programmet – Stäng appen när du är klar
+
+
+  💡 Exempel på I/O
+Välj ett alternativ:
+1. Skriv en ny anteckning
+2. Visa alla anteckningar
+3. Sök anteckningar efter datum
+4. Spara till fil
+5. Läs från fil
+6. Avsluta
+
+Input:
+Jag drack kaffe med Emma idag.
+
+Output:
+Anteckningen har sparats!
+
+🚀 Kom igång
+- Öppna projektet i Visual Studio
+- Kör Program.cs
+- Följ menyvalen i konsolen
